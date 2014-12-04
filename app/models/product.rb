@@ -4,7 +4,7 @@ class Product < ActiveRecord::Base
 	validates :title, uniqueness: true
 	validates :image_url, allow_blank: true, format: {
 		with:    %r{\.(gif|jpg|png)\Z}i,
-		message: 'must be a URL for GIF, JPG or PNG image.'
+		message: 'has to be a URL for GIF, JPG or PNG image.'
 	}
-	validates_length_of :title, minimum: 10, too_short: 'title must be at least 10 characters long.'
+	validates_length_of :title, minimum: 10, too_short: 'must be at least 10 characters long.'
 end
