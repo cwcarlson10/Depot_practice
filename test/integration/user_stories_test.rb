@@ -34,6 +34,9 @@ class UserStoriesTest < ActionDispatch::IntegrationTest
 	  assert_equal 0, cart.line_items.size
 
 	  orders = Order.all
+	  assert_equal 1, orders.size
+    order = orders[0]
+    
 	  assert_equal "Dave Thomas",      order.name
 	  assert_equal "123 The Street",   order.address
 	  assert_equal "dave@example.com", order.email

@@ -62,7 +62,7 @@ class ProductsController < ApplicationController
   end
 
   def who_bought
-    @Product = Product.find(params[:id])
+    @product = Product.find(params[:id])
     @latest_order = @product.orders.order(:update_at).last
     if safe?(@latest_order)
       respond_to do |format|
